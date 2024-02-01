@@ -46,7 +46,7 @@ void pall(stack_t **head, unsigned int line_num)
 	(void)(line_num);
 	if (*head == NULL)
 	{
-		fprintf(stderr, "Error: No elements to print at line %d", line_num);
+		return;
 	}
 	else
 	{
