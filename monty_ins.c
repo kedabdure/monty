@@ -41,7 +41,7 @@ void processIns(char *instruction, stack_t **head, unsigned int line_num)
 		token = strtok(NULL, " ");
 		if (token == NULL)
 		{
-			fprintf(stderr, "L%u: Missing value for push\n", line_num);
+			fprintf(stderr, "L%u: usage: push integer", line_num);
 			exit(EXIT_FAILURE);
 		}
 		else
