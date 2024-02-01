@@ -1,5 +1,5 @@
 #include "monty.h"
-int value;
+int value = 0;
 /**
  * processIns - process the Monty instruction
  * @instruction: instruction to process
