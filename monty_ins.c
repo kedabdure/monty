@@ -18,6 +18,7 @@ void processIns(char *instruction, stack_t **head, unsigned int line_num)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	instruction_t *current_instruction = NULL;

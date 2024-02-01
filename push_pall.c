@@ -71,3 +71,17 @@ void pint(stack_t **head, unsigned int line_num)
 	printf("%d\n", (*head)->n);
 }
 
+/**
+ * nop - Does nothing
+ * @head: Pointer to the head of the stack
+ * @line_num: Line number where the operation occurs
+ *
+ * Return: void
+ */
+void nop(stack_t **head, unsigned int line_num)
+{
+	(void)head;
+	(void)line_num;
+    /* This function does nothing */
+}
+
