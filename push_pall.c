@@ -29,6 +29,7 @@ void push(stack_t **head, unsigned int line_num)
 		(*head)->prev = new;
 		*head = new;
 	}
+	free(new);
 }
 
 /**
