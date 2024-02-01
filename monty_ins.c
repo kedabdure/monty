@@ -7,7 +7,7 @@
  *
  * Return: void
  */
-int value = 0;
+int value;
 void processIns(char *instruction, stack_t **head, unsigned int line_num)
 {
 	char *token;
