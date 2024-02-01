@@ -8,28 +8,23 @@
  */
 void push(stack_t **head, unsigned int line_num)
 {
-	stack_t *new;
+        stack_t *new;
 
-	(void)(line_num);
-	new = malloc(sizeof(stack_t));
-	if (new == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed");
-		exit(EXIT_FAILURE);
-	}
-	new->prev = NULL;
-	new->next = *head;
-	new->n = value;
-	if (*head == NULL)
-	{
-		*head = new;
-	}
-	else
-	{
-		(*head)->prev = new;
-		*head = new;
-	}
-	free(new);
+        (void)(line_num);
+        new = malloc(sizeof(stack_t));
+        if (new == NULL)
+        {
+                fprintf(stderr, "Error: malloc failed");
+                exit(EXIT_FAILURE);
+        }
+        new->n = value;
+        new->next = *head;
+        new->prev = NULL;
+    if (*head != NULL)
+        {
+                (*head)->prev = new;
+        }
+        *head = new;
 }
 
 /**
@@ -41,17 +36,25 @@ void push(stack_t **head, unsigned int line_num)
  */
 void pall(stack_t **head, unsigned int line_num)
 {
-	stack_t *temp = *head;
+        stack_t *temp = *head;
 
-	(void)(line_num);
-	if (*head == NULL)
-	{
-		return;
-	}
-	while (temp != NULL)
-	{
-		printf("%d\n", temp->n);
-		temp = temp->next;
-	}
+        (void)(line_num);
+        if (*head == NULL)
+        {
+                return;
+        }
+        while (temp != NULL)
+        {
+                printf("%d\n", temp->n);
+                temp = temp->next;
+        }
 }
-
+void pint(stack_t **head, unsigned int line_num)
+{
+        if (*head == NULL)
+        {
+                fprintf(stderr, "L%u: can't pint, stack empty\n", line_num);
+                exit(EXIT_FAILURE);
+        }
+        printf("%d\n", (*head)->n);
+}
