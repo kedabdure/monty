@@ -5,8 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-extern int value;
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -23,6 +21,7 @@ typedef struct stack_s
         struct stack_s *next;
 } stack_t;
 
+extern int value;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
