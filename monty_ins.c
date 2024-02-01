@@ -1,3 +1,4 @@
+#include "monty.h"
 /**
  * processIns - process the Monty instruction
  * @instruction: instruction to process
