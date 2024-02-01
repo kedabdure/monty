@@ -39,7 +39,7 @@ void processIns(char *instruction, stack_t **head, unsigned int line_num)
 	if (strcmp(current_instruction->opcode, "push") == 0)
 	{
 		token = strtok(NULL, " ");
-		if (token == NULL)
+		if (token == NULL || atoi(token) == 0)
 		{
 			fprintf(stderr, "L%u: usage: push integer", line_num);
 			exit(EXIT_FAILURE);
