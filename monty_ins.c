@@ -1,4 +1,5 @@
 #include "monty.h"
+int value = 0;
 /**
  * processIns - process the Monty instruction
  * @instruction: instruction to process
@@ -7,7 +8,7 @@
  *
  * Return: void
  */
-int value;
+
 void processIns(char *instruction, stack_t **head, unsigned int line_num)
 {
 	char *token;
