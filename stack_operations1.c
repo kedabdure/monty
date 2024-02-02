@@ -9,9 +9,11 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
+    stack_t *new_node;
+
     (void)line_number;
 
-    stack_t *new_node = malloc(sizeof(stack_t));
+    new_node = malloc(sizeof(stack_t));
     if (new_node == NULL)
     {
         fprintf(stderr, "Error: malloc failed\n");
@@ -32,9 +34,10 @@ void push(stack_t **stack, unsigned int line_number)
  */
 void pop(stack_t **stack, unsigned int line_number)
 {
+    stack_t *temp;
+
     (void)line_number;
 
-    stack_t *temp;
     if (*stack == NULL)
     {
         fprintf(stderr, "Error: cannot pop from an empty stack\n");
@@ -71,9 +74,11 @@ void pint(stack_t **stack, unsigned int line_number)
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
+    stack_t *temp;
+
     (void)line_number;
 
-    stack_t *temp = *stack;
+    temp = *stack;
     while (temp != NULL)
     {
         printf("%d\n", temp->n);
