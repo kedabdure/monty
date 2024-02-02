@@ -9,14 +9,13 @@ int value = 0;
  */
 void parse_monty(FILE *file, stack_t **stack)
 {
-    char *line = NULL;
-    size_t len = 0;
-    ssize_t read;
-    unsigned int line_number = 1;
+	char *line = NULL;
+    	size_t len = 0;
+    	unsigned int line_number = 1;
 
-    char *opcode, *arg;
+	char *arg, *opcode;
 
-    while ((read = getline(&line, &len, file)) != -1)
+    while (fgets(line, len, file) != NULL)
     {
         opcode = strtok(line, " \t\n");
 	    
