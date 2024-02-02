@@ -8,23 +8,34 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
-
-	(void)line_number;
-
-	if (value == 0)
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+	int i;
 
 	new_node = malloc(sizeof(stack_t));
+
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
+		return (EXIT_FAILURE);
 	}
-	
-	new_node->n = value;
+
+	if(op_toks[1] == NULL)
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+	    return (EXIT_FAILURE);
+	}
+
+	for(i = 0; op_toks[1][i]; i++)
+	{
+		if(op_toks[1][i] == '-' || i == 0){
+			continue;
+		}
+		if(op_toks[1][i] < '0' || op_toks[1][i] > '9'){
+			fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			return (EXIT_FAILURE);
+		}
+	}
+
+	new_node->n = atoi(op_toks[1]);
 	new_node->prev = NULL;
 	if (*stack != NULL)
 		(*stack)->prev = new_node;
