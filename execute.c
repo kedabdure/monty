@@ -3,14 +3,6 @@
 #include <stdio.h>
 #include <string.h>
 
-instruction_t instructions[] = {
-	{"push", push},
-	{"pall", pall},
-	{"pint", pint},
-	{"pop", pop},
-	{NULL, NULL}
-};
-
 /**
  * execute - Execute Monty bytecode instructions
  * @opcode: Opcode to execute
@@ -20,6 +12,13 @@ instruction_t instructions[] = {
 void execute(char *opcode, stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
+	instruction_t instructions[] = {
+	{"push", push},
+	{"pall", pall},
+	{"pint", pint},
+	{"pop", pop},
+	{NULL, NULL}
+	};
 
 	while (instructions[i].opcode != NULL)
 	{
