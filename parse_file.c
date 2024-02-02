@@ -1,7 +1,5 @@
 #include "monty.h"
 
-int value = 0;
-
 /**
  * parse_monty - Parse Monty bytecode instructions
  * @file: Monty bytecode file
