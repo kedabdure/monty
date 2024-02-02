@@ -27,8 +27,8 @@ int main(int argc, char *argv[])
 	}
 	parse_monty(file, &stack);
 	fclose(file);
-	
+
 	free_stack(stack);
 
-	return EXIT_SUCCESS;
+	return (EXIT_SUCCESS);
 }
