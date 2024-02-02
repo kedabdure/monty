@@ -30,6 +30,6 @@ void execute(char *opcode, stack_t **stack, unsigned int line_number)
 		i++;
 	}
 
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
 	exit(EXIT_FAILURE);
 }
