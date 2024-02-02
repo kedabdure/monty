@@ -1,7 +1,4 @@
 #include "monty.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 
 int value = 0;
 
@@ -17,16 +14,18 @@ void parse_monty(FILE *file, stack_t **stack)
     ssize_t read;
     unsigned int line_number = 1;
 
+    char *opcode, *arg;
+
     while ((read = getline(&line, &len, file)) != -1)
     {
-        char *opcode = strtok(line, " \t\n");
+        opcode = strtok(line, " \t\n");
 	    
         if (opcode == NULL || opcode[0] == '#')
         {
             line_number++;
             continue;
         }
-        char *arg = strtok(NULL, " \t\n");
+        arg = strtok(NULL, " \t\n");
 
         if (arg != NULL)
         {
