@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 /**
  * struct stack_s - Doubly linked list representation of a stack (or queue)
@@ -35,7 +37,7 @@ typedef struct instruction_s
 } instruction_t;
 
 /* External declaration for global variables */
-extern int value;
+extern char **op_toks;
 
 /* Function prototypes */
 void free_stack(stack_t *stack);
@@ -48,5 +50,6 @@ void pall(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+void tokenize_line(char *line);
 
 #endif /* MONTY_H */
