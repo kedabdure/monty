@@ -4,11 +4,11 @@
 #include <string.h>
 
 instruction_t instructions[] = {
-    {"push", push},
-    {"pall", pall},
-    {"pint", pint},
-    {"pop", pop},
-    {NULL, NULL}
+	{"push", push},
+	{"pall", pall},
+	{"pint", pint},
+	{"pop", pop},
+	{NULL, NULL}
 };
 
 /**
@@ -19,18 +19,18 @@ instruction_t instructions[] = {
  */
 void execute(char *opcode, stack_t **stack, unsigned int line_number)
 {
-    int i = 0;
+	int i = 0;
 
-    while (instructions[i].opcode != NULL)
-    {
-        if (strcmp(opcode, instructions[i].opcode) == 0)
-        {
-            instructions[i].f(stack, line_number);
-            return;
-        }
-        i++;
-    }
+	while (instructions[i].opcode != NULL)
+	{
+		if (strcmp(opcode, instructions[i].opcode) == 0)
+		{
+			instructions[i].f(stack, line_number);
+			return;
+	    }
+		i++;
+	}
 
-    fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-    exit(EXIT_FAILURE);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+	exit(EXIT_FAILURE);
 }
