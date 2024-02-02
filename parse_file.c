@@ -10,7 +10,7 @@ void parse_monty(FILE *file, stack_t **stack)
 	char *line = NULL;
 	size_t len = 0;
 	unsigned int line_number = 1;
-	int value;
+	int value = 0;
 
 	char *arg, *opcode;
 
