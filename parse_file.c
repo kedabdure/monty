@@ -10,31 +10,31 @@ int value = 0;
 void parse_monty(FILE *file, stack_t **stack)
 {
 	char *line = NULL;
-    	size_t len = 0;
-    	unsigned int line_number = 1;
+	size_t len = 0;
+	unsigned int line_number = 1;
 
 	char *arg, *opcode;
 
-    while (fgets(line, len, file) != NULL)
-    {
-        opcode = strtok(line, " \t\n");
-	    
-        if (opcode == NULL || opcode[0] == '#')
-        {
-            line_number++;
-            continue;
-        }
-        arg = strtok(NULL, " \t\n");
+	while (fgets(line, len, file) != NULL)
+	{
+		opcode = strtok(line, " \t\n");
 
-        if (arg != NULL)
-        {
-            value = atoi(arg);
-        }
+		if (opcode == NULL || opcode[0] == '#')
+		{
+			line_number++;
+			continue;
+		}
+		arg = strtok(NULL, " \t\n");
 
-        execute(opcode, stack, line_number);
+		if (arg != NULL)
+		{
+			value = atoi(arg);
+		}
 
-        line_number++;
-    }
+		execute(opcode, stack, line_number);
 
-    free(line);
+		line_number++;
+	}
+
+	free(line);
 }
