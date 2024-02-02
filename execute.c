@@ -27,7 +27,7 @@ void execute(char *opcode, stack_t **stack, unsigned int line_number)
 		{
 			instructions[i].f(stack, line_number);
 			return;
-	    }
+	    	}
 		i++;
 	}
 
