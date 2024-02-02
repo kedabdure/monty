@@ -6,7 +6,14 @@
 #include <string.h>
 #include <sys/types.h>
 
-/* Define stack structure */
+/**
+ * struct stack_s - Doubly linked list representation of a stack (or queue)
+ * @n: Integer value stored in the node
+ * @prev: Pointer to the previous element of the stack (or queue)
+ * @next: Pointer to the next element of the stack (or queue)
+ *
+ * Description: Doubly linked list node structure for stack, queues, LIFO, FIFO
+ */
 typedef struct stack_s
 {
 	int n;
@@ -14,7 +21,13 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
-/* Define instruction structure */
+/**
+ * struct instruction_s - Opcode and its function
+ * @opcode: The opcode
+ * @f: Function to handle the opcode
+ *
+ * Description: Opcode and its function for stack, queues, LIFO, FIFO
+ */
 typedef struct instruction_s
 {
 	char *opcode;
