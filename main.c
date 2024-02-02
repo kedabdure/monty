@@ -1,6 +1,7 @@
 #include "monty.h"
 #include <stdio.h>
 #include <stdlib.h>
+int value = 0;
 
 /**
  * main - Entry point for the Monty interpreter
