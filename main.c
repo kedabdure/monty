@@ -2,13 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 int value = 0;
-instruction_t instructions[] = {
-	{"push", push},
-	{"pall", pall},
-	{"pint", pint},
-	{"pop", pop},
-	{NULL, NULL}
-};
 
 
 /**
