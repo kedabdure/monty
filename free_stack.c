@@ -8,8 +8,8 @@
  */
 void free_stack(stack_t *stack)
 {
-	tabstack_t *current = stack;
-	tabstack_t *next;
+	stack_t *current = stack;
+	stack_t *next;
 
 	while (current != NULL)
 	{
