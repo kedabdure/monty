@@ -29,7 +29,7 @@ void execute(char *line, stack_t **head, unsigned int line_num)
 	}
 	if (current_instruction == NULL)
 	{
-		fprintf(stderr, "L%u: Unknown instruction %s\n", line_num, line);
+		fprintf(stderr, "L%u: unknown instruction %s\n", line_num, line);
 		exit(EXIT_FAILURE);
 	}
 	current_instruction->f(head, line_num);
