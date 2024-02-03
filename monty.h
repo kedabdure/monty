@@ -1,5 +1,5 @@
-#ifndef MAIN
-#define MAIN
+#ifndef MONTY_H
+#define MONTY_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,41 +9,47 @@
 #include <fcntl.h>
 
 /**
- * struct stack_s - doubly linked list representation of a stack (or queue)
- * @n: integer
- * @prev: points to the previous element of the stack (or queue)
- * @next: points to the next element of the stack (or queue)
+ * struct stack_s - Doubly linked list representation of a stack (or queue)
+ * @n: Integer value stored in the node
+ * @prev: Pointer to the previous element of the stack (or queue)
+ * @next: Pointer to the next element of the stack (or queue)
  *
- * Description: doubly linked list node structure
- * for stack, queues, LIFO, FIFO
+ * Description: Doubly linked list node structure for stack, queues, LIFO, FIFO
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
-extern int value;
 /**
- * struct instruction_s - opcode and its function
- * @opcode: the opcode
- * @f: function to handle the opcode
+ * struct instruction_s - Opcode and its function
+ * @opcode: The opcode
+ * @f: Function to handle the opcode
  *
- * Description: opcode and its function
- * for stack, queues, LIFO, FIFO
+ * Description: Opcode and its function for stack, queues, LIFO, FIFO
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void readMontyFile(char *filename);
-void push(stack_t **head, unsigned int line_num);
-void pall(stack_t **head, unsigned int line_num);
-void pint(stack_t **head, unsigned int line_num);
-void processIns(char *instruction, stack_t **head, unsigned int line_num);
-void nop(stack_t **head, unsigned int line_num);
+/* External declaration for global variables */
+extern char **op_toks;
 
-#endif /* MAIN */
+/* Function prototypes */
+void free_stack(stack_t *stack);
+void execute(char *opcode, stack_t **stack, unsigned int line_number);
+void parse_monty(FILE *file, stack_t **stack);
+void push(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void tokenize_line(char *line);
+
+#endif /* MONTY_H */
