@@ -12,6 +12,7 @@ void execute(char *line, stack_t **head, unsigned int line_num)
 	instruction_t instructions[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 	instruction_t *current_instruction = NULL;

@@ -45,5 +45,6 @@ void execute(char *line, stack_t **head, unsigned int line_num);
 char *validate(char *instruction, unsigned int line_num);
 int isnum(char *arg);
 void free_st(stack_t *head);
+void pint(stack_t **head, unsigned int line_num);
 #endif
 
