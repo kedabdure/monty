@@ -42,3 +42,40 @@ void pop(stack_t **head, unsigned int line_num)
 	}
 	free(temp);
 }
+
+/**
+ * swap - swap top two elements
+ * @head: head ptr
+ * @line_num: counter
+ *
+ * Return: void
+ */
+
+void swap(stack_t **head, unsigned int line_num)
+{
+	stack_t *temp0 = *head, *temp1, *temp2;
+	int i = 0;
+
+	while (temp0 != NULL)
+	{
+		i++;
+		temp0 = temp0->next;
+	}
+
+	temp1 = *head;
+	temp2 = (*head)->next;
+	if (i < 2)
+	{
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+
+	temp1->next = temp2->next;
+	if (temp2->next != NULL)
+		temp2->next->prev = temp1;
+
+	temp1->prev = temp2;
+	temp2->prev = NULL;
+	temp2->next = temp1;
+	(*head) = temp2;
+}

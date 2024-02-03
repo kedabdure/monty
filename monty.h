@@ -46,6 +46,7 @@ char *validate(char *instruction, unsigned int line_num);
 int isnum(char *arg);
 void free_st(stack_t *head);
 void pint(stack_t **head, unsigned int line_num);
+void swap(stack_t **head, unsigned int line_num);
 void pop(stack_t **head, unsigned int line_num);
 #endif
 
