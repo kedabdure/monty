@@ -14,6 +14,7 @@ void execute(char *line, stack_t **head, unsigned int line_num)
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"nop", nop},
 		{"swap", swap},
 		{"add", add},
 		{"sub", sub},
