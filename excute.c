@@ -18,7 +18,6 @@ void execute(char *line, stack_t **head, unsigned int line_num)
 		{"add", add},
 		{"sub", sub},
 		{"mul", mul},
-		{"div", div},
 		{"mod", mod},
 		{NULL, NULL}
 	};
