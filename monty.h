@@ -48,5 +48,6 @@ void free_st(stack_t *head);
 void pint(stack_t **head, unsigned int line_num);
 void swap(stack_t **head, unsigned int line_num);
 void pop(stack_t **head, unsigned int line_num);
+void nop(stack_t **head, unsigned int line_num);
 #endif
 
