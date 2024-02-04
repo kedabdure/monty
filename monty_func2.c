@@ -16,7 +16,7 @@ void nop(stack_t **head, unsigned int line_number)
  * @head: Pointer to the head of the stack (doubly linked list).
  * @line_number: Line number of the instruction.
  */
-void sub(stack_t **head, unsigned int line_number)
+void div(stack_t **head, unsigned int line_number)
 {
 	int num1, num2, result;
 	stack_t *temp;
