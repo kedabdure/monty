@@ -9,4 +9,6 @@ pop
 add
 push 1
 sub
+push 2
+div
 pall

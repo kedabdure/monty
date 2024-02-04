@@ -16,7 +16,7 @@ void execute(char *line, stack_t **head, unsigned int line_num)
 		{"pop", pop},
 		{"nop", nop},
 		{"swap", swap},
-		{"_div", _div},
+		{"div", _div},
 		{"add", add},
 		{"sub", sub},
 		{"mul", mul},
