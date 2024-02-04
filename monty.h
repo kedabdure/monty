@@ -51,6 +51,7 @@ void pop(stack_t **head, unsigned int line_num);
 void add(stack_t **head, unsigned int line_num);
 void nop(stack_t **head, unsigned int line_num);
 void sub(stack_t **head, unsigned int line_number);
+void _div(stack_t **head, unsigned int line_number);
 void mul(stack_t **head, unsigned int line_number);
 void mod(stack_t **head, unsigned int line_number);
 #endif
