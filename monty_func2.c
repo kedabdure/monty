@@ -2,8 +2,7 @@
 
 /**
  * nop - Doesn't do anything
- * @stack: point to the stack
- *
+ * @head: point to the stack
  * @line_number: Line number of the instruction
  */
 void nop(stack_t **head, unsigned int line_number)
