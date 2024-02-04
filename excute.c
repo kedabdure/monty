@@ -15,6 +15,7 @@ void execute(char *line, stack_t **head, unsigned int line_num)
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	instruction_t *current_instruction = NULL;
